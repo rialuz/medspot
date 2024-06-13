@@ -1,0 +1,62 @@
+
+.main-content {
+    height: -webkit-fill-available;
+
+    h1 {
+        margin: 25px;
+    }
+
+    div {
+       text-align: -webkit-center; 
+    }
+    
+}
+
+.table-container {
+    height: 500px;
+    overflow-y: auto;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    /* scroll-snap-type: y mandatory; */
+}
+
+.table-container > table {
+    width: 100%;
+}
+
+.patient-table {
+    width: 500px;
+    border-collapse: collapse;
+    font-size: 0.9em;
+    align-content: center;
+    overflow: hidden;
+    overflow-y: scroll;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
+
+.patient-table thead tr {
+    background-color: cornflowerblue;
+    color: black;
+    text-align: left;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+}
+
+.patient-table th,
+.patient-table td {
+    padding: 12px 15px;
+}
+
+.patient-table tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.patient-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.patient-table tbody tr:last-of-type {
+    border-bottom: 2px solid cornflowerblue;
+}
