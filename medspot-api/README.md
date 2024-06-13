@@ -1,5 +1,5 @@
-# Super Health Inc., API
-API for Super Health Inc that stores patient and encounter data. This database currently accept the following methods: GET, POST, PUT, DELETE.
+# MedSpot, API
+API for MedSpot that stores patient and encounter data. This database currently accept the following methods: GET, POST, PUT, DELETE.
 
 ## Getting Started
 
@@ -25,20 +25,20 @@ You must have a JDK installed on your machine.
 
 This server requires that you have Postgres installed and running on the default Postgres port of 5432. It requires that you have a database created on the server with the name of `postgres`
 - Your username should be `postgres`
-- Your password should be `root`
+- Your password should be `postgres`
 
 ## Postman Collection
 
 A link to the postman collection is provided containing examples of valid and invalid requests for each endpoint.
 
-Link: [Health Collection](https://www.getpostman.com/collections/c03e88fd69f336909d46)
+Link: [MedSpot Collection](https://www.getpostman.com/collections/c03e88fd69f336909d46)
 
 To import this collection into Postman, click the "Import" button in the left navigation menu, click "Link" in the modal that opens, paste the above link into the box and click "Continue". 
 
 
 ## Swagger Link
 
-Here is the link to the swagger documentation: [Swagger Health API Documentation](http://localhost:8085/swagger-ui/#/)
+Here is the link to the swagger documentation: [Swagger MedSpot API Documentation](http://localhost:8085/swagger-ui/#/)
 
 ## Request Examples
 
