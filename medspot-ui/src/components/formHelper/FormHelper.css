@@ -1,0 +1,28 @@
+.formInput, select{
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+}
+
+input, select{
+    padding: 5px;
+    margin: 5px 0px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+
+label{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.error{
+    font-size: 14px;
+    padding-bottom: 5px;
+    color: red; 
+}
+
+input:invalid[focused="true"]{
+    border: 1px solid red;
+}

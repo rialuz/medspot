@@ -3,7 +3,7 @@ function Footer() {
   
     return (
         <div className='footer'>
-          <footer>MedSpot 2024</footer>
+          <footer>© 2024 MedSpot. All rights reserved.</footer>
         </div>
     )
   }

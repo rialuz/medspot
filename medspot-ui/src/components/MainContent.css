@@ -1,4 +1,25 @@
 
+.add-patient {
+    float: inline-end;
+
+    button {
+        background-color: #539cfd;
+        cursor: pointer;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        border-radius: 5%;
+        border: none;
+
+        p {
+            margin-right: 5px;
+        }
+    }
+}
+
+.link {
+    color: #1a73e7;
+}
 .main-content {
     height: -webkit-fill-available;
 
@@ -13,7 +34,7 @@
 }
 
 .table-container {
-    height: 500px;
+    /* height: 500px; */
     overflow-y: auto;
     width: 500px;
     margin-left: auto;
@@ -36,17 +57,22 @@
 }
 
 .patient-table thead tr {
-    background-color: cornflowerblue;
+    background-color: #1a73e7;
     color: black;
     text-align: left;
     font-weight: bold;
     position: sticky;
     top: 0;
 }
+.table-header-row {
+     th {
+        width: 65px;
+     }
+}
 
 .patient-table th,
 .patient-table td {
-    padding: 12px 15px;
+    padding: 12px 13px;
 }
 
 .patient-table tbody tr {
@@ -58,5 +84,21 @@
 }
 
 .patient-table tbody tr:last-of-type {
-    border-bottom: 2px solid cornflowerblue;
+    border-bottom: 2px solid #1a73e7;
 }
+
+.view-patient-container {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    justify-content: end;
+}
+
+.view-patient-column {
+    padding: 0 5px 0 0 !important;
+    width: 105px;
+    padding-right: 15px;
+}
+
+
+

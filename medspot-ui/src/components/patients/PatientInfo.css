@@ -1,0 +1,80 @@
+.patient-info-page {
+    height: -webkit-fill-available;
+
+    .redirect-btn {
+        button {
+        margin-left: 10px;
+        margin-top: 10px;
+        height: 30px;
+        width: 100px;
+        border-radius: 2%;
+        border: 2px solid #1a73e7;
+        background-color: #1a73e7;
+        cursor: pointer;             
+        }
+
+    }
+
+    .patient-info-container{
+        margin-top: 25px;
+    }
+}
+
+.patient-details {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    border-top: 2px solid #1a73e7;
+    
+    .icons {
+        display: flex;
+        justify-content: flex-end;
+        grid-template-columns: none;
+        color:#1a73e7;
+    }
+
+    div {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-left: 5px;
+        margin-bottom: 5px;
+        margin-top: 5px;
+
+        div {
+                    display: flex;
+        flex-direction: column;
+        }
+    }
+
+    div > label {
+        font-weight: bold;
+    }
+
+
+}
+
+.encounters-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        margin-left: 5px;
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+    div > label {
+        font-weight: bold;
+    }
+}
+
+    .view-more {
+        float: inline-end;
+        display: flex;
+        align-items: center;
+
+        .icon {
+            cursor: pointer;
+        }
+    }

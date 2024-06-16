@@ -1,7 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Fragment } from "react/jsx-runtime"
-import { client } from "../client"
 import './MainContent.css'
+import { Icon } from "@mui/material"
+import { Link } from "react-router-dom"
+import PatientTable from "./patients/PatientTable"
 
 /**
  * Make POST request - Add Patient  +
@@ -19,77 +21,11 @@ import './MainContent.css'
  * @returns 
  */
 function MainContent({patients, setPatients}) { // passing from parent to child add in object ({ props})
-
-    const addPatient = (patient: any) => {
-        client
-        .post('/patients', patient)
-        .then((res) => {
-            setPatients((patients: any) => [res.data, ...patients])
-        })
-    }
   
     return (
         <div className='main-content'>
           <h1>Patients</h1>
-        
-        <div className="table-container">
-           <table className="patient-table">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Age</th>
-                    <th>Email</th>               
-                </tr>                
-            </thead>
-
-            <tbody>
-                {
-                    patients.map((patient:any) => (
-                        <Fragment>
-                            <tr key={patient.id}>
-                                <td>{patient.firstName} {patient.lastName}</td>
-                                <td>{patient.age}</td>
-                                <td>{patient.email}</td>                                 
-                            </tr>
-                            <tr key={patient.id}>
-                                <td>{patient.firstName} {patient.lastName}</td>
-                                <td>{patient.age}</td>
-                                <td>{patient.email}</td>                                 
-                            </tr>
-                            <tr key={patient.id}>
-                                <td>{patient.firstName} {patient.lastName}</td>
-                                <td>{patient.age}</td>
-                                <td>{patient.email}</td>                                 
-                            </tr>
-                            <tr key={patient.id}>
-                                <td>{patient.firstName} {patient.lastName}</td>
-                                <td>{patient.age}</td>
-                                <td>{patient.email}</td>                                 
-                            </tr>
-                            <tr key={patient.id}>
-                                <td>{patient.firstName} {patient.lastName}</td>
-                                <td>{patient.age}</td>
-                                <td>{patient.email}</td>                                 
-                            </tr>
-                            <tr key={patient.id}>
-                                <td>{patient.firstName} {patient.lastName}</td>
-                                <td>{patient.age}</td>
-                                <td>{patient.email}</td>                                 
-                            </tr>                            <tr key={patient.id}>
-                                <td>{patient.firstName} {patient.lastName}</td>
-                                <td>{patient.age}</td>
-                                <td>{patient.email}</td>                                 
-                            </tr>
-             
-                        </Fragment>
-
-                    ))
-                }
-            </tbody>
-
-          </table> 
-        </div>
-          
+          <PatientTable patients={patients} setPatients={setPatients} />
         </div>
     )
   }
