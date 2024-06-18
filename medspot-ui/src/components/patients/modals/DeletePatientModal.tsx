@@ -1,6 +1,6 @@
 import { Box, Icon, Modal } from "@mui/material";
 import { deletePatient } from "../../helpers/apiHelper";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 const style = {

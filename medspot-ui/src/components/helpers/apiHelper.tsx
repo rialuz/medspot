@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // http requests
 import { client } from "../../client"
+import { validateRequiredEncounterFields } from "../encounters/EncounterValidation";
 import { validateRequiredFields } from "../patients/PatientValidation";
 
 //Get patients
@@ -30,18 +31,20 @@ export const addPatient = (patient: any, setPatients: any, setErrors: any, setOp
         if(res.status === 201) setOpen(false);
     })
     .catch((err) => {
+      if(err.response.status === 409) setErrors((errors: any) => { return({...errors, email: "Email is already registered."})})
       setErrors(validateRequiredFields(patient));
     })
 }
 
 // UPDATE patients
-export const updatePatient = (patientId:any, patient:any, setErrors:any, setOpen:any) => {
+export const updatePatient = (patientId:any, patient:any, setOpen:any, setErrors:any) => {
   client
   .put( `/patients/${patientId}`, patient)
   .then((res) => {
       if(res.status === 200) setOpen(false);
   })
   .catch((err) => {
+    if(err.response.status === 409) setErrors((errors: any) => { return({...errors, email: "Email is already registered."})})
   })
 }
 
@@ -77,7 +80,26 @@ export const getPatientEncounterById = (id:any, encounterId:any, setEncounter:an
     .catch((err) => console.log(err))
 }
 
-// Update patient encounters
-export const updatePatientEncounter = () => {
+export const createPatientEncounter = (patientId:any, encounter:any, setEncounters:any, setOpen:any, setErrors:any) => {
+  client
+  .post(`/patients/${patientId}/encounters`, encounter)
+  .then((res) => {
+      setEncounters((encounters: any) => [res.data, ...encounters])
+      if(res.status === 201) setOpen(false);
+  })
+  .catch((err) => {
+    setErrors(validateRequiredEncounterFields(encounter));
+  })
+}
 
+// Update patient encounters
+export const updatePatientEncounter = (patientId:any, encounterId: any, encounter:any, setOpen:any, setErrors:any) => {
+  client
+  .put(`/patients/${patientId}/encounters/${encounterId}`, encounter)
+  .then((res) => {
+      if(res.status === 200) setOpen(false);
+  })
+  .catch((err) => {
+    setErrors(validateRequiredEncounterFields(encounter));
+  })
 }

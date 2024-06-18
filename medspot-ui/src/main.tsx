@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import Header from './components/Header.tsx';
 import Footer from './components/Footer.tsx';
+import EncounterDetails from './components/encounters/EncounterDetails.tsx';
 
 function Layout() {
   return (
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: 'patients/:id',
         element: <PatientInfo />
+      },
+      {
+        path: '/patients/:id/encounters/:encounterId',
+        element: <EncounterDetails />
       }
     ]
   }

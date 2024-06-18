@@ -1,13 +1,8 @@
-import { useState } from "react";
 import './FormHelper.css'
 
 const FormHelper = (props) => {
-    const [focused, setFocused] = useState(false);
     const { id, defaultVal, type, label, name, placeholder, errorMessage, onChange } = props;
 
-    const handleFocus = (e:any) => {
-        setFocused(true);
-      };
 
     return (
     <div className="formInput">
@@ -19,7 +14,7 @@ const FormHelper = (props) => {
       key={id}
       placeholder={placeholder}
       onChange={onChange}
-      onBlur={handleFocus}
+      step=".01"
       style={{ border: errorMessage ? '1px solid red' : '1px solid black'  }}
       />
 

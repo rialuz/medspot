@@ -1,18 +1,26 @@
 .header {
   background-color: #1a73e7;
   height: 50px !important;
-
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  
   h2 {
-    align-content: center;
-    margin: auto 0;
-    padding-top: 10px;
-    padding-left: 20px;
+    margin-left: 10px;
+  }
+
+  h3 {
+    color: black;
+    margin-right: 10px;
+
   }
 }
 
 .footer {
   background-color: #1a73e7;
   height: 30px;
+  align-content: center;
   text-align: center;
 }
 

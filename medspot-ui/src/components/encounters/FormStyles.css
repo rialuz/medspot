@@ -1,0 +1,48 @@
+.encounter-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.encounter-btn {
+        margin-top: 25px;
+        text-align: center; 
+        
+        button {
+        height: 30px;
+        width: 150px;
+        border-radius: 2%;
+        border: 2px solid #1a73e7;
+        background-color: #1a73e7;
+        cursor: pointer;   
+                
+        }
+
+    }
+
+.form-title {
+        text-align: center;
+        margin-bottom: 25px;
+}
+
+.close-modal {
+    float: right;
+    cursor: pointer;
+    
+}
+
+.int-inputs {
+    display: flex;
+    justify-content: space-between;
+    width: 520px;
+    margin-top: 5px;
+    
+    div {
+        display: flex;
+        width: 200px;
+        gap: 5px;
+    }
+    input {
+        width: 60px;
+    }
+    
+}

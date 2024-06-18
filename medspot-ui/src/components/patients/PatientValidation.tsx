@@ -40,8 +40,6 @@ const validateFields = (patient) => {
         errors.postal = "Postal must be in the format DDDDD or DDDDD-DDDD where D is any numerical digit."
     }
 
-    console.log(patient, errors)
-
     return errors;
 
 }

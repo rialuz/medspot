@@ -10,7 +10,6 @@ function App() {
     client.get('/patients')
     .then((res) => {
       setPatients(res.data);
-      console.log('res.data',res.data);
     })
     .catch((err) => console.log(err))
   }

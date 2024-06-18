@@ -1,10 +1,10 @@
-.formInput, select{
+.formInput, select, textarea{
     display: flex;
     flex-direction: column;
     width: 280px;
 }
 
-input, select{
+input, select, textarea{
     padding: 5px;
     margin: 5px 0px;
     border-radius: 5px;
