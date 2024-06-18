@@ -33,6 +33,9 @@ export const validateRequiredEncounterFields = (encounter) => {
     if(!encounter.chiefComplaint) errors.chiefComplaint = "Chief Complaint is required."
     if(!encounter.date) errors.date = "Date is required."
 
+        if(encounter.systolic && !encounter.diastolic) errors.diastolic = "Must enter a value."
+    if(!encounter.systolic && encounter.diastolic) errors.systolic = "Must enter a value."
+
     errors = {
         ...errors,
         ...validateFields(encounter)
