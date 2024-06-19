@@ -31,8 +31,8 @@ export const addPatient = (patient: any, setPatients: any, setErrors: any, setOp
         if(res.status === 201) setOpen(false);
     })
     .catch((err) => {
-      if(err.response.status === 409) setErrors((errors: any) => { return({...errors, email: "Email is already registered."})})
       setErrors(validateRequiredFields(patient));
+      if(err.response.status === 409) setErrors((errors: any) => { return({...errors, email: "Email is already registered."})})
     })
 }
 
