@@ -29,7 +29,7 @@ public class EncounterValidation {
     errorBuilder += validateRequiredFields(encounter.getPatientId(), encounter.getVisitCode(),
         encounter.getProvider(),
         encounter.getBillingCode(), encounter.getIcd10(), encounter.getTotalCost(),
-        encounter.getCopay(), encounter.getChiefComplaint(), encounter.getDate());
+        encounter.getCopay(), encounter.getChiefComplaint(), encounter.getDate(), encounter.getSystolic(), encounter.getDiastolic());
 
     errorBuilder += validateTotalCostAndCopay(encounter.getTotalCost(), encounter.getCopay());
     errorBuilder += validateVisitCode(encounter.getVisitCode());
@@ -58,7 +58,7 @@ public class EncounterValidation {
    */
   public String validateRequiredFields(Long patientId, String visitCode, String provider,
       String billingCode,
-      String icd10, BigDecimal totalCost, BigDecimal copay, String chiefComplaint, String date) {
+      String icd10, BigDecimal totalCost, BigDecimal copay, String chiefComplaint, String date, Long systolic, Long diastolic) {
     String errors = "";
     String regex = "^\\s+$";
 
@@ -90,6 +90,14 @@ public class EncounterValidation {
     }
     if (date == null || date == "" || regexMatcher.containsMatch(date, regex)) {
       errors += "Date is required. ";
+    }
+
+    if(systolic == null && diastolic != null) {
+      errors += "Systolic is required.";
+    }
+
+    if(diastolic == null && systolic != null) {
+      errors += "Diastolic is required.";
     }
 
     return errors;
