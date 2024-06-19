@@ -141,6 +141,7 @@ function CreateEncounterModal({ open, onClose, setEncounters, setOpen }) {
                   type="number"
                   label="Total Cost"
                   name="totalCost"
+                  step=".01"
                   errorMessage={errors.totalCost}
                   onChange={onEncounterChange}
                 />
@@ -150,6 +151,7 @@ function CreateEncounterModal({ open, onClose, setEncounters, setOpen }) {
                   type="number"
                   label="Copay"
                   name="copay"
+                  step=".01"
                   errorMessage={errors.copay}
                   onChange={onEncounterChange}
                 />

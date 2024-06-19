@@ -131,6 +131,7 @@ const updateEncounter = (e) => {
                   type="number"
                   label="Total Cost"
                   name="totalCost"
+                  step=".01"
                   errorMessage={errors.totalCost}
                   defaultVal={encounter.totalCost}
                   onChange={onEncounterChange}
@@ -141,6 +142,7 @@ const updateEncounter = (e) => {
                   type="number"
                   label="Copay"
                   name="copay"
+                  step=".01"
                   errorMessage={errors.copay}
                   defaultVal={encounter.copay}
                   onChange={onEncounterChange}

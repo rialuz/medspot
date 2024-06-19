@@ -1,7 +1,7 @@
 import './FormHelper.css'
 
 const FormHelper = (props) => {
-    const { id, defaultVal, type, label, name, placeholder, errorMessage, onChange } = props;
+    const { id, defaultVal, step, type, label, name, placeholder, errorMessage, onChange } = props;
 
 
     return (
@@ -14,7 +14,7 @@ const FormHelper = (props) => {
       key={id}
       placeholder={placeholder}
       onChange={onChange}
-      step=".01"
+      step={step}
       style={{ border: errorMessage ? '1px solid red' : '1px solid black'  }}
       />
 
