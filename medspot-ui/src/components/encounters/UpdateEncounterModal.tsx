@@ -116,10 +116,10 @@ const updateEncounter = (e) => {
               <FormHelper
                 id="6"
                 label="ICD10"
-                name="idc10"
+                name="icd10"
                 type="text"
                 placeholder="ICD10"
-                errorMessage={errors.idc10}
+                errorMessage={errors.icd10}
                 defaultVal={encounter.icd10}
                 onChange={onEncounterChange}
               />
